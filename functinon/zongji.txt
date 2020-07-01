@@ -1,0 +1,79 @@
+函数:
+    
+普通函数:
+    
+    无参数:   
+        def 函数名([参数1,参数2...]):
+            pass
+
+    有参数:
+        一般参数:
+
+            def func(a,b):
+                pass
+            func(1,2)
+
+        可变参数:
+            def func(*args,**kwargs): args单个元素  kwarg关键字参数
+                pass
+            func()
+            func(1)
+            func(a=100)
+
+        默认值:
+            def func(a=10,b=10):
+                pass
+        
+            func()
+            func(100)
+
+        关键字参数:
+            func(a=99)
+        
+    返回值:return
+        没有返回值 
+            def func():
+                print('------')
+            x=func() --->x=none
+        有返回值
+            def func():
+               print('123')
+            return 'a','b'
+            x=func()  --->123
+            print(x)---->('a','b')
+
+嵌套函数
+    嵌套函数作用域 : 优先级:LEGB
+
+        L : local   本地   局部变量
+        E : encloseing  嵌套
+        G : Global  全局
+        B : built-in     pyhton内置的
+
+    修改全局变量:gloabal 修改局部变量:nolocal
+    内置函数:gloabals() nolocals() 查看函数有哪些?
+
+
+    闭包:
+        1.内层函数
+        2.内层函数引用了外层函数的变量
+        3.返回内层函数
+
+    装饰器(扩展封闭原则):
+        1.内层函数
+        2.内层函数引用了外层函数的变量
+        3.返回内层函数
+        4.被装饰函数作为外层函数的参数
+        
+
+        使用:@装饰名1
+            @装饰器2-----优先
+            @装饰器(参数) -----装饰器函数要有三层
+            def 被装饰名():
+                pass
+匿名函数
+    lambda 参数:返回结果
+     map()     reduce()    filter()    sorted()    max()   min()
+
+递归函数:
+    自己调用自己

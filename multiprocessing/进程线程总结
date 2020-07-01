@@ -1,0 +1,68 @@
+进程 , 线程
+Process类
+
+def func(n):
+    pass
+p=Process(target=func ,name='',args=(参数,),kwargs=(参数,))
+p.start()
+# run() 做任务而已 没有启动进程
+
+自定义进程:
+class myProcess(Process):
+
+    def run(self):
+        pass
+
+p=myProcess()
+p.start()
+
+进程数据共享:
+n = 0
+
+进程池: Pool ()
+p=Pool(5)
+阻塞式:apply(func,args,kwargs)
+非阻塞式:放入队列 一起进行  apply_async(func,args,kwargs,callback=进程结束时候的函数)
+
+进程间的通信:
+q=Queue(4)
+q.put()
+q.get()
+q.qsize()
+q.empty()
+q.full()
+
+
+线程:
+进程里面存在多个线程,多个线程争夺进程资源
+
+t=Thread(target=func ,name='',args=(参数,),kwargs=(参数,))
+t.start()
+
+GIL 全局解释器锁 python自带
+线程:python伪线程
+
+lock = Lock()
+lock.acquire()
+.....
+lock.release()
+
+----->只要用锁 , 会出现死锁
+避免死锁
+lock.acquire(timeout=)
+若考虑速度则用进程
+若考虑耗时操作用线程
+
+
+
+数据共享:
+    进程共享数据与线程共享数据区别:
+        进程是每个进程中都有一份一样的数据
+        线程是共用一个数据---> 数据安全问题
+
+
+线程中的通信
+生产者线程
+消费者线程
+q=queue.Queue()
+
